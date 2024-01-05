@@ -6,7 +6,7 @@
     console.log(" [*] Running amqp");
     var amqp = require('amqplib/callback_api');
 
-    amqp.connect('amqp://railway-rabbitmq.railway.internal', function(error0, connection) {
+    amqp.connect(process.env.RABBITMQ_PRIVATE_URL, function(error0, connection) {
         if (error0) {
             throw error0;
         }
